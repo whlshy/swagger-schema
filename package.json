@@ -1,7 +1,7 @@
 {
     "name": "swagger-schema",
     "version": "1.0.0",
-    "description": "",
+    "description": "swagger-ui schema auto generation",
     "main": "swagger-schema.js",
     "readmeFilename": "README.md",
     "author": {
