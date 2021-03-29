@@ -74,9 +74,47 @@ const schemaFolder = './src/schema/'
 asyncfun(outputFile, endpointsFiles, doc, schemaFolder)
 ```
 
+### Example Document
+
+Json file in schema folder
+
+**Note.json:**
+
+```json
+[
+    { "attr": "vid", "type": "Int" },
+    { "attr": "currenttime", "type": "Float" },
+    { "attr": "nid", "type": "Int" },
+    { "attr": "title", "type": "NVarChar" },
+    { "attr": "content", "type": "NVarChar" }
+]
+```
+
 ## Compare Use
 
 ### Before Using swagger-schema
+
+**controller -> Note.js:**
+
+```js
+router.delete('/note', async (req, res, next) => {
+    // #swagger.tags = ['Note']
+    // #swagger.summary = '刪除單個筆記'
+    const { nid } = req.body // declare parameter's in body
+    sqlcode = "update Note set bDel = 1 where NID = @nid and OwnerMID = @mid";
+    let response = await runSQL(sqlcode, req, schema);
+    res.json(response ? { message: "success" } : { message: "failed" });
+});
+
+router.put('/note/title', async (req, res, next) => {
+    // #swagger.tags = ['Note']
+    // #swagger.summary = '編輯筆記標題'
+    const { nid, title } = req.body // declare parameter's in body
+    sqlcode = "update Note set Title = @title, LastModifiedDT = getdate() where NID = @nid and OwnerMID = @mid";
+    let response = await runSQL(sqlcode, req, schema);
+    res.json(response ? { message: "success" } : { message: "failed" });
+});
+```
 
 ![image](https://user-images.githubusercontent.com/49122960/112843076-cc4d0c00-90d4-11eb-9312-95a18be76414.png)
 
