@@ -90,6 +90,12 @@ Json file in schema folder
 ]
 ```
 
+### Notice
+
+**Swagger schema json file and swagger tag should be give in same name!!!**
+
+Like your router's swagger tag is 'Note', and your schema name should be 'Note.json'.
+
 ## Compare Use
 
 ### Before Using swagger-schema
