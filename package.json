@@ -1,6 +1,6 @@
 {
     "name": "swagger-schemagen",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "swagger-ui schema auto generation",
     "main": "swagger-schema.js",
     "scripts": {
