@@ -3,8 +3,7 @@
 swagger-ui schema auto generation and base on [swagger-autogen](https://github.com/davibaltar/swagger-autogen).
 
 [![NPM Version](https://img.shields.io/npm/v/swagger-schemagen.svg?style=flat)](https://www.npmjs.org/package/commander)
-[![NPM Downloads](https://img.shields.io/npm/dm/swagger-schemagen.svg?style=flat)](https://npmcharts.com/compare/swagger-schemagen?minimal=true)
-[![Known Vulnerabilities](https://snyk.io/test/npm/swagger-schemagen/badge.svg)](https://snyk.io/test/npm/swagger-schemagen)
+[![NPM Downloads](https://img.shields.io/npm/dy/swagger-schemagen.svg?style=flat)](https://npmcharts.com/compare/swagger-schemagen?minimal=true)
 
 ## Installation
 
