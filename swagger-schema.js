@@ -27,17 +27,20 @@ module.exports = async (outputFile, schemaFolder) => {
                             output.paths[pathkeys][methodkeys].parameters.map(value => {
                                 if (schema.filter(s => s.attr == value.name)[0]) {
                                     let type = schema.filter(s => s.attr == value.name)[0].type
-                                    if (type == 'Int') {
+                                    if (type == 'Int' || type == 'SmallInt' || type == 'BigInt') {
                                         type = 'integer'
                                     }
-                                    if (type == 'Float') {
+                                    else if (type == 'Float') {
                                         type = 'number'
                                     }
-                                    if (type == 'NVarChar' || type == 'VarChar') {
+                                    else if (type == 'NVarChar' || type == 'VarChar') {
                                         type = 'string'
                                     }
-                                    if (type == 'Bit') {
+                                    else if (type == 'Bit') {
                                         type = 'boolean'
+                                    }
+                                    else {
+                                        type = type.toLowerCase()
                                     }
                                     value.type = type
                                 }
@@ -46,17 +49,20 @@ module.exports = async (outputFile, schemaFolder) => {
                                         Object.keys(value.schema.properties).map(objvalue => {
                                             if (schema.filter(s => s.attr == objvalue).length > 0) {
                                                 let objtype = schema.filter(s => s.attr == objvalue)[0].type
-                                                if (objtype == 'Int') {
-                                                    objtype = 'integer'
+                                                if (objtype == 'Int' || objtype == 'SmallInt' || objtype == 'BigInt') {
+                                                    type = 'integer'
                                                 }
-                                                if (objtype == 'Float') {
+                                                else if (objtype == 'Float') {
                                                     objtype = 'number'
                                                 }
-                                                if (objtype == 'NVarChar' || objtype == 'VarChar') {
+                                                else if (objtype == 'NVarChar' || objtype == 'VarChar') {
                                                     objtype = 'string'
                                                 }
-                                                if (objtype == 'Bit') {
+                                                else if (objtype == 'Bit') {
                                                     objtype = 'boolean'
+                                                }
+                                                else {
+                                                    objtype = objtype.toLowerCase()
                                                 }
                                                 value.schema.properties[objvalue].type = objtype;
                                                 delete value.schema.properties[objvalue]['example']
