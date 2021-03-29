@@ -9,6 +9,10 @@
         "email": "whl93187@gmail.com"
     },
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/whlshy/swagger-schema.git"
+      },
     "dependencies": {
         "json5": "^2.2.0",
         "path": "^0.12.7"
