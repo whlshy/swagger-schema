@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "swagger-schema.js",
+    "readmeFilename": "README.md",
     "author": {
         "name": "Wei-Hong Lu",
         "email": "whl93187@gmail.com"
