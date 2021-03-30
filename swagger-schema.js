@@ -50,7 +50,7 @@ module.exports = async (outputFile, schemaFolder) => {
                                             if (schema.filter(s => s.attr == objvalue).length > 0) {
                                                 let objtype = schema.filter(s => s.attr == objvalue)[0].type
                                                 if (objtype == 'Int' || objtype == 'SmallInt' || objtype == 'BigInt') {
-                                                    type = 'integer'
+                                                    objtype = 'integer'
                                                 }
                                                 else if (objtype == 'Float') {
                                                     objtype = 'number'
