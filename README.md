@@ -24,7 +24,7 @@ const swaggerSchema = require('swagger-schemagen')
 If you already have the module installed and want to update to the latest version, use the command:
 
 ```bash
-$ npm install --save swagger-schemagen@1.0.4
+$ npm install --save swagger-schemagen@last
 ```
 
 ## Usage

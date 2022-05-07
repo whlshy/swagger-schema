@@ -1,6 +1,6 @@
 {
     "name": "swagger-schemagen",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "swagger-ui schema auto generation perameter type for mssql",
     "main": "swagger-schema.js",
     "scripts": {

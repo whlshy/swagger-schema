@@ -19,7 +19,7 @@ module.exports = async (outputFile, schemaFolder) => {
         let output = require(path.resolve(outputFile));
         Object.keys(output.paths).map(pathkeys => {
             Object.keys(output.paths[pathkeys]).map(methodkeys => {  // get post put delete...
-                if (output.paths[pathkeys][methodkeys].tags.length > 0 && output.paths[pathkeys][methodkeys].parameters) {
+                if (output.paths[pathkeys][methodkeys].tags && output.paths[pathkeys][methodkeys].tags.length > 0 && output.paths[pathkeys][methodkeys].parameters) {
                     if (files.filter(f => f.split('.')[0] == output.paths[pathkeys][methodkeys].tags[0]).length > 0) {
                         let filename = files.filter(f => f.split('.')[0] == output.paths[pathkeys][methodkeys].tags[0])[0]
                         let schema = require(path.resolve(schemaFolder + '\\' + filename))
